@@ -79,18 +79,18 @@ async def _batch(event):
 async def run_batch(userbot, client, sender, link, _range):
     for i in range(_range):
         timer = 60
-        if i < 500:
+        if i < 1000:
             timer = 1
-        if i < 1000 and i > 500:
+        if i < 2000 and i > 1000:
             timer = 2
-        if i < 10000 and i > 1000:
+        if i < 10000 and i > 2000:
             timer = 3
         if not 't.me/c/' in link:
-            if i < 500:
+            if i < 1000:
                 timer = 1
-            if i < 1000 and i > 500:
+            if i < 2000 and i > 1000:
                 timer = 2
-            if i < 10000 and i > 1000:
+            if i < 10000 and i > 2000:
                 timer = 3
         try:
             await get_bulk_msg(userbot, client, sender, link, i) 
